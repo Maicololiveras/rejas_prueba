@@ -1,0 +1,43 @@
+﻿<Window x:Class="CalculadoraCercaDeAcero.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Calculadora de Cerca de Acero" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Margin="10">
+            <TextBlock Text="Largo total de la cerca:"/>
+            <TextBox Name="txtLength" Margin="0,5,0,10"/>
+            <TextBlock Text="Altura de la cerca:"/>
+            <ComboBox Name="cmbHeight" Margin="0,5,0,10" DisplayMemberPath="Value" SelectedValuePath="Key"/>
+            <TextBlock Text="Color de la cerca:"/>
+            <ComboBox Name="cmbColor" Margin="0,5,0,10" DisplayMemberPath="Value" SelectedValuePath="Key"/>
+            <Button Content="Calcular" Click="Calculate_Click" Margin="0,5,0,10"/>
+            <CheckBox Name="chkConfirmado" Content="Confirmado"/>
+            <Button Content="Exportar a Excel" Click="ExportarTablaExcel_Click"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="10">
+                <TextBlock Text="Cantidad de rejas:"/>
+                <TextBlock Name="lblCantidadRejas" Margin="0,5,0,10"/>
+                <TextBlock Text="Cantidad de postes:"/>
+                <TextBlock Name="lblCantidadPostes" Margin="0,5,0,10"/>
+                <TextBlock Text="Cantidad de tornillos:"/>
+                <TextBlock Name="lblCantidadTornillos" Margin="0,5,0,10"/>
+                <TextBlock Text="Cantidad de fijadores:"/>
+                <TextBlock Name="lblCantidadFijadores" Margin="0,5,0,10"/>
+                <TextBlock Text="Color de la pintura:"/>
+                <TextBlock Name="lblColorPintura" Margin="0,5,0,10"/>
+                <ListBox Name="lbPedidosConfirmados"/>
+            </StackPanel>
+            <Image x:Name="imgCerca" Grid.Column="0" Margin="10"/>
+        </Grid>
+    </Grid>
+</Window>
+
